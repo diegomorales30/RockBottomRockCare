@@ -11,27 +11,28 @@
 
 body{
 
-    display: flex;
+    /*display: flex;*/
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('vecteezy_brown-rock-wall_2305272.jpg') no-repeat;
-    background-size: cover;
-    background-position: center; 
+    background-color: #D3C6AD !important;
+    /*background: url('vecteezy_brown-rock-wall_2305272.jpg') no-repeat;*/
+    /*background-size: cover;
+    background-position: center;*/ 
 }
 
-.container{
+/*.container{
     width: 100%;
     padding-right: var(--bs-gutter-x,.75rem);
     padding-left: var(--bs-gutter-x,.75rem);
     margin-right: auto;
     margin-left: auto;
     padding-top: 14rem;
-}
+}*/
 
 header{
 
-    position: fixed;
+    /*position: fixed;*/
     top: 0;
     left: 0;
     width: 100%;
@@ -337,20 +338,44 @@ header{
 
 }
 
-h3{
-    position: fixed;
-    color: white;
-    width: 90%;
-    height: 50%;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, .5);
-    border-radius: 20px;
-    backdrop-filter: blur(100px);
-    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; 
+/*Pricing style sheet*/
+.plan-one{
+    /*color: rgb(0, 0, 0);*/
+    background-color:#5d4a45;
+    color: #fff;
+    margin-top: 20px;
+    /*border: 2px solid rgba(255, 255, 255, .5);*/
+    /*border-radius: 20px;*/
+    /*backdrop-filter: blur(100px);*/
+   /* box-shadow: 0 0 30px rgba(0, 0, 0, .5);*/
+    
 }
+
+.plan-two{
+    background-color:#5d4a45;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.tab{
+    margin-left: px;
+}
+.tab2{
+    margin-left: 90px;
+}
+.tab3{
+    margin-left: 100px;
+}
+.buts{
+    background-color:#5d4a45;
+}
+
+.btn {
+    width: 15%;
+    background:#CABA9c !important;
+    margin-left: 2px;
+}
+
+
 
 
