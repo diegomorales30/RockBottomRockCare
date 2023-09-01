@@ -376,6 +376,24 @@ header{
     margin-left: 2px;
 }
 
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -16px;
+    padding: 0%;
+}
+
+.col {
+    padding: 0 16px;
+    flex: 50%
+}
+
+.contact-form :is(input, textarea, select){
+    width: 100%;
+    border-radius: 5px;
+    border: 2px solid #5d4a45;
+}
+
 
 
 
