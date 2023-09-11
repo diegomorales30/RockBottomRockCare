@@ -15,7 +15,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: rgb(164, 160, 160) !important;
+    background-color: rgb(255, 255, 255) !important;
     /*background: url('vecteezy_brown-rock-wall_2305272.jpg') no-repeat;*/
     /*background-size: cover;
     background-position: center;*/ 
@@ -341,8 +341,8 @@ header{
 /*Pricing style sheet*/
 .plan-one{
     /*color: rgb(0, 0, 0);*/
-    background-color:#5e4f4b;
-    color: #fff;
+    background-color:#ffffff;
+    color: #000000;
     margin-top: 20px;
     /*border: 2px solid rgba(255, 255, 255, .5);*/
     /*border-radius: 20px;*/
@@ -352,8 +352,8 @@ header{
 }
 
 .plan-two{
-    background-color:#5e4f4b;
-    color: #fff;
+    background-color:#ffffff;
+    color: #000000;
     margin-top: 20px;
 }
 
