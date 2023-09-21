@@ -26,16 +26,16 @@ function createCookie(cookieCheck){
             break;
         }
 
-
-
-
     }
-
     
+}
 
-
-
-    
+function isValidCookie(checkCook){
+   let  keys = [];
+    if(keys.includes(cookieCheck)){
+        return false;
+    }
+    return true;
 }
 
 
