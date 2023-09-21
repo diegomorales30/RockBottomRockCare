@@ -32,7 +32,7 @@ function createCookie(cookieCheck){
 
 function isValidCookie(checkCook){
    let  keys = [];
-    if(keys.includes(cookieCheck)){
+    if(keys.includes(checkCook)){
         return false;
     }
     return true;
