@@ -1,6 +1,5 @@
 
 function createCookie(cookieCheck){
-    let coookieStr = "";
 
     let i = 0;
     let strLength = 8;
@@ -13,7 +12,7 @@ function createCookie(cookieCheck){
             let ranNum = Math.random() * (max - min) + min;
             let ranNumRound = Math.floor(ranNum);
             let chr = String.fromCharCode(ranNumRound);
-            coookieStr = cookieCheck + "rock=" +  chr;
+            cookieCheck = cookieCheck + "rock=" +  chr;
             i = i + 1;
         }
     
