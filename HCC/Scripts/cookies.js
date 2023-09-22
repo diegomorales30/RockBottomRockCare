@@ -1,52 +1,47 @@
+import { addCookie, getCookieList } from "./cookiehandler.js";
 
-function createCookie(cookieCheck){
-
+async function createCookie(cookieCheck){
     let i = 0;
     let strLength = 8;
+    cookieCheck = "rock="
 
-    while(true){
-
-        while(i <= strLength){
+    while (true) {
+        while (i <= strLength) {
             let min = 65;
             let max = 90;
             let ranNum = Math.random() * (max - min) + min;
             let ranNumRound = Math.floor(ranNum);
             let chr = String.fromCharCode(ranNumRound);
-            cookieCheck = cookieCheck + "rock=" +  chr;
+            cookieCheck = cookieCheck + chr;
             i = i + 1;
         }
-    
-        let arrStr = coookieStr.split("=");
-    
+        let arrStr = cookieCheck.split("=");
         let checkCook = arrStr[1];
-
-        if(isValidCookie(checkCook)){
-            //Post Function
+        if (await isValidCookie(checkCook)) {
+            await addCookie(checkCook);
+            document.cookie = cookieCheck;
             break;
         }
-
     }
-    
 }
 
-function isValidCookie(checkCook){
-   let  keys = [];
-    if(keys.includes(checkCook)){
+async function isValidCookie(checkCook){
+    let keys = await getCookieList();
+    if (keys.includes(checkCook)) {
         return false;
     }
     return true;
 }
 
-
-
-window.onload = (event) => {
-    let cookieCheck = ""
-
-    if(document.cookie){
-        console.log("No Cookie")
-        createCookie(cookieCheck)
+window.onload = async (event) => {
+    let cookieCheck = "";
+    if (document.cookie) {
+        console.log("Welcome back");
     }
-    // the search method will go in this part of the code
-    console.log("Welcome back")
-    return
+    else {
+        console.log("No Cookie");
+        await createCookie(cookieCheck);
+    }
+    var cookieList = await getCookieList();
+    document.getElementById("userCount").innerHTML = "Total unique visitors: " + cookieList.length;
 };
