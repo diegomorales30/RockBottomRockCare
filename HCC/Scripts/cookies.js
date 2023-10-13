@@ -20,12 +20,13 @@ async function createCookie(cookieCheck){
             cookieCheck = cookieCheck + chr;
             i = i + 1;
         }
-        let arrStr = cookieCheck.split("=");
-        cookieCheck = checkCook + ";count=0";
+        let arrStr = cookieCheck.split("="); 
+        let count = "count=0";
         let checkCook = arrStr[1];
         if (await isValidCookie(checkCook)) {
             await addCookie(checkCook);
             document.cookie = cookieCheck;
+            document.cookie = count;
             break;
         }
     }
@@ -52,9 +53,18 @@ async function isValidCookie(checkCook){
  */
 function keepCount(){
     let getCookie = document.cookie;
-    let numcount = getCookie.charAt(-1);
+    console.log(getCookie)
+    if (getCookie.length == 23)
+        var numcount = getCookie.charAt(getCookie.length - 1);
+    else 
+        var numcount = getCookie.substring(getCookie.length - 2, getCookie.length)
+    console.log(numcount)
     let countClick = parseInt(numcount) + 1;
     console.log(countClick);
+    getCookie = getCookie.substring(0, getCookie.length - 1);
+    getCookie = getCookie + countClick;
+    let countAsCookie = "count=" + countClick
+    document.cookie = countAsCookie;
 }
 
 /**
@@ -67,6 +77,7 @@ function keepCount(){
  * This function will run when the page loads
 */
 window.onload = async (event) => {
+    window.keepCount = keepCount;
     let cookieCheck = "";
     if (document.cookie) {
         console.log("Welcome back");
