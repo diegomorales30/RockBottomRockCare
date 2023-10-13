@@ -51,9 +51,10 @@ async function isValidCookie(checkCook){
  * this function is called when you click a button
  */
 function keepCount(){
-    console.log(coutnClick);
-    coutnClick = coutnClick + 1;
-    
+    let getCookie = document.cookie;
+    let numcount = getCookie.charAt(-1);
+    let countClick = parseInt(numcount) + 1;
+    console.log(countClick);
 }
 
 /**
