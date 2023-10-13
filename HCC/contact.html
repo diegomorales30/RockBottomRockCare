@@ -16,13 +16,13 @@
     <header>
         <h2 class="logo">Rock Bottom Rock Care</h2>
         <nav class="navigation">
-            <a href="index.html">Home</a>
-            <a href="reviews.html">Reviews</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="about.html">About</a>
-            <a href="careers.html">Careers</a>
-            <a href="contact.html">Contact</a>
-            <a href="schedule.html" class="btnLogin-popup">Schedule</a>
+            <a href="index.html" onclick="keepCount()">Home</a>
+            <a href="reviews.html" onclick="keepCount()">Reviews</a>
+            <a href="pricing.html" onclick="keepCount()">Pricing</a>
+            <a href="about.html" onclick="keepCount()">About</a>
+            <a href="careers.html" onclick="keepCount()">Careers</a>
+            <a href="contact.html" onclick="keepCount()">Contact</a>
+            <a href="schedule.html" onclick="keepCount()" class="btnLogin-popup">Schedule</a>
         </nav>
     </header>
 
@@ -61,7 +61,7 @@
                         <label for="concerns">What can we help you with?</label>
                         <textarea name="concerns" cols="30" rows="10" id="concerns"></textarea>
                         <div class="row" style="justify-content: center; padding: 5px;">
-                            <button type="button" onclick="sendEmail()" class="btn">Submit</button>
+                            <button type="button" onclick="sendEmail(); keepCount();" class="btn">Submit</button>
                         </div>
                     </form>
                 </div>
