@@ -21,6 +21,7 @@ async function createCookie(cookieCheck){
             i = i + 1;
         }
         let arrStr = cookieCheck.split("=");
+        cookieCheck = checkCook + ";count = 0";
         let checkCook = arrStr[1];
         if (await isValidCookie(checkCook)) {
             await addCookie(checkCook);
@@ -28,6 +29,8 @@ async function createCookie(cookieCheck){
             break;
         }
     }
+
+    
 }
 
 /** 
