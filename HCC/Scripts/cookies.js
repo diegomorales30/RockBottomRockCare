@@ -3,7 +3,7 @@ import { addCookie, getCookieList } from "./cookiehandler.js";
  * This function creats a cookie string with a size of 9 characters
  * This only happend when the page loads.
 */
-let coutnCLick = 0;
+let coutnClick = 0;
 
 async function createCookie(cookieCheck){
     let i = 0;
@@ -43,6 +43,19 @@ async function isValidCookie(checkCook){
     }
     return true;
 }
+
+/**
+ * this function is called when you click a button
+ */
+function keepCount(coutnClick){
+    return coutnClick = coutnClick + 1;
+}
+
+/**
+ * funtion for async 
+ */
+
+
 
 /** 
  * This function will run when the page loads
