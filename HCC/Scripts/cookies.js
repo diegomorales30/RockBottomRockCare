@@ -3,6 +3,8 @@ import { addCookie, getCookieList } from "./cookiehandler.js";
  * This function creats a cookie string with a size of 9 characters
  * This only happend when the page loads.
 */
+let coutnCLick = 0;
+
 async function createCookie(cookieCheck){
     let i = 0;
     let strLength = 8;
