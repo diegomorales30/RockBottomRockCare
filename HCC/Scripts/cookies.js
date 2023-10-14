@@ -2,9 +2,7 @@ import { addCookie, getCookieList } from "./cookiehandler.js";
 /** 
  * This function creats a cookie string with a size of 9 characters
  * This only happend when the page loads.
-*/
-let coutnClick = 0;
-
+ **/
 async function createCookie(cookieCheck){
     let i = 0;
     let strLength = 8;
@@ -40,7 +38,7 @@ async function createCookie(cookieCheck){
  * will return true if cookie found else false if 
  * not found in data base
 */
-async function isValidCookie(checkCook){
+async function isValidCookie(checkCook) {
     let keys = await getCookieList();
     if (keys.includes(checkCook)) {
         return false;
@@ -49,9 +47,10 @@ async function isValidCookie(checkCook){
 }
 
 /**
- * this function is called when you click a button
+ * This function increments the user's click count when a button is pressed
+ * The value is stored in cookies (local storage)
  */
-function keepCount(){
+function keepCount() {
     let getCookie = document.cookie;
     console.log(getCookie)
     if (getCookie.length == 23)
@@ -68,9 +67,24 @@ function keepCount(){
 }
 
 /**
- * funtion for async 
+ * Sends the user's total click count to server
+ * Will be stored as KV pair {cookieName : clickCount}
  */
-
+async function sendClicksToDB() {
+    var requestHeaders = new Headers();
+    requestHeaders.append("Type", "AddClicks");
+    var requestOptions = {
+        method: "POST",
+        headers: requestHeaders,
+        mode: "cors",
+        body: document.cookie
+    };
+    var request = new Request("https://rockbottomrockcare.com/cookie", requestOptions);
+    var response = await fetch(request);
+    await response.text().then(text => {
+        console.log("Added clicks to cookie", text);
+    });
+}
 
 
 /** 
@@ -78,6 +92,7 @@ function keepCount(){
 */
 window.onload = async (event) => {
     window.keepCount = keepCount;
+    window.sendClicksToDB = sendClicksToDB;
     let cookieCheck = "";
     if (document.cookie) {
         console.log("Welcome back");

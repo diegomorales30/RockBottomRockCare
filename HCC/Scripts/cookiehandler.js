@@ -1,6 +1,6 @@
 export async function addCookie(cookieName) {
     // Create header to add to request
-    var requestHeaders = new Headers()
+    var requestHeaders = new Headers();
     // Specify what type of request we are sending
     requestHeaders.append("Type", "AddCookie");
     // Specify other options like POST, cors, and request body
