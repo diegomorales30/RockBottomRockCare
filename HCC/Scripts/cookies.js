@@ -84,6 +84,7 @@ async function sendClicksToDB() {
     await response.text().then(text => {
         console.log("Added clicks to cookie", text);
     });
+    document.cookie = "count=0";
 }
 
 
